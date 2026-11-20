@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d1c">
+  <title>ZENTRA Intelligence</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <a class="brand" href="#home" aria-label="ZENTRA ana sayfa">
+      <div class="logo">✦ ZENTRA</div>
+      <div class="tagline">INTELLIGENCE</div>
+    </a>
+
+    <div class="section-title" data-i18n="workspace">ÇALIŞMA ALANI</div>
+    <nav class="menu" aria-label="Ana menü">
+      <a class="menu-link active" href="#home" data-page="home" data-i18n="overview">🏠 Genel Bakış</a>
+      <a class="menu-link" href="#projects" data-page="projects" data-i18n="projects">📁 Projeler</a>
+      <a class="menu-link" href="#tasks" data-page="tasks" data-i18n="tasks">✓ Görevler</a>
+      <a class="menu-link" href="#ai" data-page="ai" data-i18n="ai">🧠 ZENTRA AI</a>
+      <a class="menu-link" href="#ideas" data-page="ideas" data-i18n="ideas">💡 Fikirler</a>
+      <a class="menu-link" href="#notes" data-page="notes" data-i18n="notes">📝 Notlar</a>
+      <a class="menu-link" href="#calendar" data-page="calendar">📅 Takvim</a>
+      <a class="menu-link" href="#files" data-page="files">📂 Dosyalarım</a>
+      <a class="menu-link" href="#community" data-page="community">🌐 Topluluk</a>
+    </nav>
+
+    <div class="section-title">SOSYAL</div>
+    <nav class="menu" aria-label="Sosyal menü">
+      <a class="menu-link" href="#friends" data-page="friends">👥 Arkadaşlar</a>
+      <a class="menu-link" href="#messages" data-page="messages">✉️ Mesajlar</a>
+      <a class="menu-link" href="#message-requests" data-page="message-requests">📨 Mesaj İstekleri</a>
+      <a class="menu-link" href="#group-chat" data-page="group-chat">💬 Grup Sohbeti</a>
+      <a class="menu-link" href="#private-community" data-page="private-community">🔒 Özel Topluluklar</a>
+    </nav>
+
+    <div class="section-title">HESAP VE ARAÇLAR</div>
+    <nav class="menu" aria-label="Hesap ve araçlar menüsü">
+      <a class="menu-link" href="#notifications" data-page="notifications">🔔 Bildirimler</a>
+      <a class="menu-link" href="#statistics" data-page="statistics">📊 İstatistikler</a>
+      <a class="menu-link" href="#trash" data-page="trash">🗑️ Geri Dönüşüm Kutusu</a>
+      <a class="menu-link" href="#permissions" data-page="permissions">🛡️ Yetkiler</a>
+    </nav>
+
+    <div class="section-title" data-i18n="personal">KİŞİSEL</div>
+    <nav class="menu" aria-label="Kişisel menü">
+      <a class="menu-link" href="#rewards" data-page="rewards" data-i18n="rewards">🏆 Ödüller</a>
+      <a class="menu-link" href="#settings" data-page="settings" data-i18n="settings">⚙️ Ayarlar</a>
+      <a class="menu-link" href="#account" data-page="account" data-i18n="account">👤 Hesabım</a>
+    </nav>
+
+    <a class="premium-card" href="#premium" data-page="premium">
+      <strong>✦ ZENTRA PREMIUM</strong>
+      <span data-i18n="premiumText">Potansiyelini keşfet.</span>
+      <small data-i18n="premiumOpen">Premium'u keşfet →</small>
+    </a>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">ZENTRA INTELLIGENCE</p>
+        <h1 id="pageTitle" data-i18n="dashboard">Kontrol Paneli</h1>
+        <p id="pageSubtitle" data-i18n="subtitle">Kişisel zekâ ve çalışma alanın.</p>
+      </div>
+      <div class="top-actions">
+        <select class="language-select" id="languageSelect" aria-label="Dil seç">
+          <option value="tr">🇹🇷 Türkçe</option>
+          <option value="en">🇬🇧 English</option>
+          <option value="ar">🇸🇦 العربية</option>
+          <option value="de">🇩🇪 Deutsch</option>
+        </select>
+        <button class="profile" id="accountShortcut" type="button">👤 <span id="topUserName">Hesabım</span></button>
+      </div>
+    </header>
+
+    <section class="page active" id="page-home">
+      <section class="welcome">
+        <small data-i18n="welcomeSmall">GELECEĞE HOŞ GELDİN</small>
+        <h2 data-i18n="welcomeTitle">ZENTRA'ya Hoş Geldin.</h2>
+        <p data-i18n="welcomeText">Fikirlerini keşfet, projelerini geliştir ve geleceğini tasarla.</p>
+        <button class="button" type="button" data-go="projects" data-i18n="explore">Çalışma Alanını Keşfet →</button>
+      </section>
+
+      <h2 class="heading" data-i18n="yourOverview">Genel Bakışın</h2>
+      <section class="stats">
+        <article class="stat"><small data-i18n="yourProjects">PROJELERİN</small><h3 id="statProjects">0</h3></article>
+        <article class="stat"><small data-i18n="completedTasks">TAMAMLANAN GÖREVLER</small><h3 id="statTasks">0</h3></article>
+        <article class="stat"><small data-i18n="totalXP">TOPLAM XP</small><h3 id="statXP">0</h3></article>
+      </section>
+
+      <h2 class="heading" data-i18n="exploreZentra">ZENTRA'yı Keşfet</h2>
+      <section class="cards">
+        <button class="card" type="button" data-go="projects"><span class="emoji">📁</span><h3 data-i18n="projectsTitle">Projeler</h3><p data-i18n="projectsText">Projelerini oluştur ve yönet.</p></button>
+        <button class="card" type="button" data-go="tasks"><span class="emoji">✓</span><h3 data-i18n="tasksTitle">Görevler</h3><p data-i18n="tasksText">Günlük iş akışını düzenle.</p></button>
+        <button class="card" type="button" data-go="ai"><span class="emoji">🧠</span><h3 data-i18n="aiTitle">ZENTRA AI</h3><p data-i18n="aiText">Akıllı yapay zekâ çalışma alanın.</p></button>
+        <button class="card" type="button" data-go="ideas"><span class="emoji">💡</span><h3 data-i18n="ideasTitle">Fikirler</h3><p data-i18n="ideasText">Fikirlerini gerçeğe dönüştür.</p></button>
+        <button class="card" type="button" data-go="notes"><span class="emoji">📝</span><h3 data-i18n="notesTitle">Notlar</h3><p data-i18n="notesText">Notlarını kaydet ve düzenle.</p></button>
+        <button class="card" type="button" data-go="rewards"><span class="emoji">🏆</span><h3 data-i18n="rewardsTitle">Ödüller</h3><p data-i18n="rewardsText">XP kazan ve başarılar aç.</p></button>
+        <button class="card" type="button" data-go="settings"><span class="emoji">⚙️</span><h3 data-i18n="settingsTitle">Ayarlar</h3><p data-i18n="settingsText">Deneyimini kişiselleştir.</p></button>
+      </section>
+    </section>
+
+    <section class="page" id="page-projects">
+      <div class="section-intro"><div><p class="eyebrow" data-i18n="workspace">ÇALIŞMA ALANI</p><h2 data-i18n="projectsTitle">Projeler</h2><p data-i18n="projectsIntro">Projelerini tek bir yerde oluştur ve takip et.</p></div><span class="count-pill" id="projectCount">0</span></div>
+      <form class="panel form-grid" id="projectForm">
+        <label><span data-i18n="projectName">Proje adı</span><input id="projectName" maxlength="80" required placeholder="Örn. Yeni web sitesi"></label>
+        <label><span data-i18n="projectDescription">Açıklama</span><textarea id="projectDescription" maxlength="500" rows="3" placeholder="Projenin amacı..."></textarea></label>
+        <button class="button" type="submit" data-i18n="addProject">+ Proje oluştur</button>
+      </form>
+      <div class="item-grid" id="projectList"></div>
+    </section>
+
+    <section class="page" id="page-tasks">
+      <div class="section-intro"><div><p class="eyebrow" data-i18n="workspace">ÇALIŞMA ALANI</p><h2 data-i18n="tasksTitle">Görevler</h2><p data-i18n="tasksIntro">Yapılacaklarını planla ve tamamladıkça XP kazan.</p></div><span class="count-pill" id="taskCount">0</span></div>
+      <form class="panel form-grid" id="taskForm">
+        <label><span data-i18n="taskName">Görev adı</span><input id="taskName" maxlength="120" required placeholder="Örn. Ana sayfayı tamamla"></label>
+        <label><span data-i18n="taskProject">İlgili proje (isteğe bağlı)</span><select id="taskProject"><option value="">Genel görev</option></select></label>
+        <button class="button" type="submit" data-i18n="addTask">+ Görev ekle</button>
+      </form>
+      <div class="task-list" id="taskList"></div>
+    </section>
+
+    <section class="page" id="page-ai">
+      <div class="section-intro"><div><p class="eyebrow">INTELLIGENCE</p><h2>ZENTRA AI</h2><p data-i18n="aiIntro">Fikirlerini yaz, planlarını düzenle.</p></div></div>
+      <div class="panel ai-panel">
+        <div class="ai-status"><span class="status-dot"></span><strong>ZENTRA AI</strong><span class="muted" data-i18n="demoMode">Arayüz önizlemesi</span></div>
+        <div class="chat-messages" id="chatMessages"><div class="message assistant" data-i18n="aiWelcome">Merhaba! Ben ZENTRA. Projelerin ve fikirlerin üzerinde çalışmana yardımcı olabilirim. Gerçek yapay zekâ yanıtları için sunucu tarafında bir AI API bağlantısı gerekir.</div></div>
+        <form class="chat-form" id="chatForm"><input id="chatInput" maxlength="2000" placeholder="ZENTRA'ya bir mesaj yaz..." required><button class="button" type="submit" data-i18n="send">Gönder</button></form>
+        <p class="notice" data-i18n="aiNotice">Not: Bu sürümde sohbet arayüzü hazırdır; gerçek AI servisine henüz bağlanmamıştır.</p>
+      </div>
+    </section>
+
+    <section class="page" id="page-ideas">
+      <div class="section-intro"><div><p class="eyebrow" data-i18n="workspace">ÇALIŞMA ALANI</p><h2 data-i18n="ideasTitle">Fikirler</h2><p data-i18n="ideasIntro">Aklına gelen fikirleri kaybetmeden sakla.</p></div><span class="count-pill" id="ideaCount">0</span></div>
+      <form class="panel form-grid" id="ideaForm">
+        <label><span data-i18n="ideaTitle">Fikir başlığı</span><input id="ideaTitle" maxlength="100" required placeholder="Örn. Akıllı çalışma uygulaması"></label>
+        <label><span data-i18n="ideaDescription">Fikir açıklaması</span><textarea id="ideaDescription" maxlength="1000" rows="3" placeholder="Fikrini açıkla..."></textarea></label>
+        <button class="button" type="submit" data-i18n="saveIdea">+ Fikir kaydet</button>
+      </form>
+      <div class="item-grid" id="ideaList"></div>
+    </section>
+
+    <section class="page" id="page-notes">
+      <div class="section-intro"><div><p class="eyebrow" data-i18n="personal">KİŞİSEL</p><h2 data-i18n="notesTitle">Notlar</h2><p data-i18n="notesIntro">Önemli notlarını burada sakla.</p></div><span class="count-pill" id="noteCount">0</span></div>
+      <form class="panel form-grid" id="noteForm">
+        <label><span data-i18n="noteTitle">Not başlığı</span><input id="noteTitle" maxlength="120" required placeholder="Örn. Önemli fikir"></label>
+        <label><span data-i18n="noteContent">Not içeriği</span><textarea id="noteContent" maxlength="5000" rows="5" required placeholder="Notunu buraya yaz..."></textarea></label>
+        <button class="button" type="submit" data-i18n="addNote">+ Not kaydet</button>
+      </form>
+      <div class="item-grid" id="noteList"></div>
+    </section>
+
+    <section class="page" id="page-rewards">
+      <div class="section-intro"><div><p class="eyebrow">ZENTRA PROGRESS</p><h2 data-i18n="rewardsTitle">Ödüller</h2><p data-i18n="rewardsIntro">Görevlerini tamamla, XP biriktir.</p></div></div>
+      <div class="panel reward-panel"><span class="reward-icon">🏆</span><div><p class="muted" data-i18n="yourXP">TOPLAM XP'N</p><h2 id="rewardXP">0 XP</h2><p id="rewardLevel">Seviye 1</p></div></div>
+      <h3 class="heading" data-i18n="achievements">Başarımlar</h3>
+      <div class="item-grid" id="achievementList"></div>
+    </section>
+
+    <section class="page" id="page-settings">
+      <div class="section-intro"><div><p class="eyebrow">ZENTRA</p><h2 data-i18n="settingsTitle">Ayarlar</h2><p data-i18n="settingsIntro">Uygulama tercihlerini düzenle.</p></div></div>
+      <div class="panel settings-panel">
+        <label><span data-i18n="language">Uygulama dili</span><select id="settingsLanguage"><option value="tr">Türkçe</option><option value="en">English</option><option value="ar">العربية</option><option value="de">Deutsch</option></select></label>
+        <div class="setting-row"><div><strong data-i18n="dataTitle">Yerel veriler</strong><p class="muted" data-i18n="dataText">Projelerin, görevlerin ve fikirlerin bu tarayıcıda saklanır.</p></div><button class="danger-button" id="exportData" type="button" data-i18n="export">Verileri dışa aktar</button></div>
+        <div class="setting-row"><div><strong data-i18n="resetTitle">Uygulama verilerini sıfırla</strong><p class="muted" data-i18n="resetText">Bu işlem bu tarayıcıdaki ZENTRA kayıtlarını siler.</p></div><button class="danger-button" id="resetData" type="button" data-i18n="reset">Verileri sıfırla</button></div>
+      </div>
+    </section>
+
+    <section class="page" id="page-account">
+      <div class="section-intro"><div><p class="eyebrow">ZENTRA ID</p><h2 data-i18n="accountTitle">Hesabım</h2><p data-i18n="accountIntro">Profil bilgilerini bu cihazda düzenle.</p></div></div>
+      <form class="panel form-grid" id="accountForm">
+        <label><span data-i18n="displayName">Görünen ad</span><input id="displayName" maxlength="60" placeholder="Adın"></label>
+        <label><span data-i18n="emailLabel">E-posta (isteğe bağlı)</span><input id="accountEmail" type="email" maxlength="120" placeholder="ornek@eposta.com"></label>
+        <button class="button" type="submit" data-i18n="saveProfile">Profili kaydet</button>
+        <p class="notice" data-i18n="accountNotice">Bu profil yalnızca bu tarayıcıda saklanır; henüz gerçek kullanıcı girişi veya çevrim içi hesap sistemi yoktur.</p>
+      </form>
+    </section>
+
+    <!-- TAKVİM -->
+    <section class="page" id="page-calendar">
+      <div class="section-intro"><div><p class="eyebrow">PLANLAMA</p><h2>Takvim</h2><p>Etkinliklerini ve önemli tarihlerini düzenle.</p></div></div>
+      <form class="panel form-grid" id="calendarForm">
+        <label>Etkinlik başlığı<input id="calendarTitle" maxlength="120" required placeholder="Örn. Proje teslimi"></label>
+        <label>Tarih<input id="calendarDate" type="date" required></label>
+        <label>Açıklama<textarea id="calendarDescription" rows="3" maxlength="500"></textarea></label>
+        <button class="button" type="submit">+ Takvime ekle</button>
+      </form>
+      <div class="item-grid" id="calendarList"></div>
+    </section>
+
+    <!-- DOSYALAR -->
+    <section class="page" id="page-files">
+      <div class="section-intro"><div><p class="eyebrow">ÇALIŞMA ALANI</p><h2>Dosyalarım</h2><p>Proje dosyalarını listele ve düzenle.</p></div></div>
+      <div class="panel form-grid"><p>Dosya seçimi dosya adlarını bu tarayıcıda listeler; dosya içeriği sunucuya yüklenmez.</p><input id="fileUploadInput" type="file" multiple hidden><button class="button" id="fileUploadButton" type="button">+ Dosya seç</button><div class="item-grid" id="fileList"></div></div>
+    </section>
+
+    <!-- TOPLULUK -->
+    <section class="page" id="page-community">
+      <div class="section-intro"><div><p class="eyebrow">SOSYAL</p><h2>Topluluk</h2><p>Fikirlerini ve çalışmalarını paylaş.</p></div></div>
+      <form class="panel form-grid" id="communityPostForm"><label>Yeni gönderi<textarea id="communityPostText" rows="4" maxlength="1500" required placeholder="Toplulukla ne paylaşmak istersin?"></textarea></label><button class="button" type="submit">Paylaş</button></form>
+      <div class="item-grid" id="communityFeed"></div>
+    </section>
+
+    <!-- ARKADAŞLAR -->
+    <section class="page" id="page-friends">
+      <div class="section-intro"><div><p class="eyebrow">SOSYAL</p><h2>Arkadaşlar</h2><p>Arkadaşlarını ve bağlantılarını yönet.</p></div></div>
+      <form class="panel form-grid" id="friendSearchForm"><label>Kullanıcı ara<input id="friendSearchInput" maxlength="80" placeholder="Kullanıcı adı"></label><button class="button" type="submit">Ara</button><div id="friendSearchResults"></div></form>
+      <div class="item-grid" id="friendList"></div>
+    </section>
+
+    <!-- MESAJLAR -->
+    <section class="page" id="page-messages">
+      <div class="section-intro"><div><p class="eyebrow">SOSYAL</p><h2>Mesajlar</h2><p>Kişisel mesajlarını bu cihazdaki demo alanında görüntüle.</p></div></div>
+      <form class="panel form-grid" id="privateMessageForm"><label>Alıcı kullanıcı adı<input id="messageRecipient" maxlength="80" required placeholder="Kullanıcı adı"></label><label>Mesaj<textarea id="privateMessageInput" rows="3" maxlength="2000" required placeholder="Mesajını yaz..."></textarea></label><button class="button" type="submit">Gönder</button></form>
+      <div class="item-grid" id="privateChatMessages"></div>
+    </section>
+
+    <!-- MESAJ İSTEKLERİ -->
+    <section class="page" id="page-message-requests">
+      <div class="section-intro"><div><p class="eyebrow">SOSYAL</p><h2>Mesaj İstekleri</h2><p>Bekleyen mesaj istekleri.</p></div></div>
+      <div class="item-grid" id="messageRequestList"></div>
+    </section>
+
+    <!-- GRUP SOHBETİ -->
+    <section class="page" id="page-group-chat">
+      <div class="section-intro"><div><p class="eyebrow">SOSYAL</p><h2>Grup Sohbeti</h2><p>Grup mesajlarını yerel demo alanında yönet.</p></div></div>
+      <div class="panel form-grid">
+        <label>Grup seçimi<select id="groupChatSelect"><option value="local-demo">Genel grup</option></select></label>
+        <div id="groupChatMessages" class="item-grid"></div>
+        <form id="groupChatForm">
+          <label>Mesaj<input id="groupChatInput" maxlength="1000" required placeholder="Gruba mesaj yaz..."></label>
+          <button class="button" type="submit">Gönder</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ÖZEL TOPLULUKLAR -->
+    <section class="page" id="page-private-community">
+      <div class="section-intro"><div><p class="eyebrow">TOPLULUK</p><h2>Özel Topluluklar</h2><p>Küçük çalışma grupları oluştur.</p></div></div>
+      <form class="panel form-grid" id="privateCommunityForm">
+        <label>Topluluk adı<input id="privateCommunityName" maxlength="100" required></label>
+        <label>Açıklama<textarea id="privateCommunityDescription" rows="3" maxlength="500"></textarea></label>
+        <label>Erişim<select id="privateCommunityAccess"><option value="invite">Davet ile</option><option value="private">Özel</option></select></label>
+        <button class="button" type="submit">Topluluk oluştur</button>
+      </form>
+      <div class="item-grid" id="privateCommunityList"></div>
+    </section>
+
+    <!-- BİLDİRİMLER -->
+    <section class="page" id="page-notifications">
+      <div class="section-intro">
+        <div><p class="eyebrow">HESAP</p><h2>Bildirimler</h2><p>Uygulama bildirimlerin.</p></div>
+        <button class="button" id="markNotificationsRead" type="button">Tümünü okundu işaretle</button>
+      </div>
+      <div class="item-grid" id="notificationList"></div>
+    </section>
+
+    <!-- İSTATİSTİKLER -->
+    <section class="page" id="page-statistics">
+      <div class="section-intro"><div><p class="eyebrow">RAPORLAR</p><h2>İstatistikler</h2><p>Çalışma alanındaki ilerlemeni incele.</p></div></div>
+      <div class="stats">
+        <article class="stat"><small>PROJELER</small><h3 id="analyticsProjects">0</h3></article>
+        <article class="stat"><small>GÖREVLER</small><h3 id="analyticsTasks">0</h3></article>
+        <article class="stat"><small>TOPLAM XP</small><h3 id="analyticsXP">0</h3></article>
+        <article class="stat"><small>FİKİRLER</small><h3 id="analyticsIdeas">0</h3></article>
+      </div>
+      <div class="item-grid" id="statisticsDetails"></div>
+    </section>
+
+    <!-- GERİ DÖNÜŞÜM KUTUSU -->
+    <section class="page" id="page-trash">
+      <div class="section-intro">
+        <div><p class="eyebrow">HESAP</p><h2>Geri Dönüşüm Kutusu</h2><p>Silinen öğeleri geri yükle veya kalıcı olarak kaldır.</p></div>
+        <button class="danger-button" id="emptyTrashButton" type="button">Kutuyu boşalt</button>
+      </div>
+      <div class="item-grid" id="trashList"></div>
+    </section>
+
+    <!-- YETKİLER -->
+   <!-- YETKİLER -->
+    <section class="page" id="page-permissions">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">GÜVENLİK</p>
+          <h2>Yetkiler</h2>
+          <p>Hesap rolünü ve erişim açıklamalarını görüntüle.</p>
+        </div>
+      </div>
+      <div class="panel">
+        <p>Mevcut rol: <strong id="currentUserRole">Standart kullanıcı</strong></p>
+        <div class="item-grid" id="permissionsList"></div>
+        <p class="notice">Gerçek rol ve erişim denetimi sunucu tarafında uygulanmalıdır.</p>
+      </div>
+    </section>
+
+    <!-- PREMIUM -->
+    <section class="page" id="page-premium">
+      <div class="premium-hero">
+        <p class="eyebrow">✦ ZENTRA</p>
+        <h2>ZENTRA Premium</h2>
+        <p data-i18n="premiumDescription">Daha gelişmiş çalışma araçları için Premium alanı.</p>
+        <span class="premium-label" data-i18n="comingSoon">YAKINDA</span>
+      </div>
+
+      <div class="item-grid premium-features">
+        <article class="panel">
+          <span class="emoji">⚡</span>
+          <h3 data-i18n="premiumFeature1">Gelişmiş AI araçları</h3>
+          <p data-i18n="premiumFeature1Text">AI bağlantısı etkinleştirildiğinde gelişmiş özellikler.</p>
+        </article>
+        <article class="panel">
+          <span class="emoji">☁️</span>
+          <h3 data-i18n="premiumFeature2">Bulut senkronizasyonu</h3>
+          <p data-i18n="premiumFeature2Text">Hesap sistemi eklendiğinde cihazlar arası senkronizasyon.</p>
+        </article>
+        <article class="panel">
+          <span class="emoji">📊</span>
+          <h3 data-i18n="premiumFeature3">Gelişmiş raporlar</h3>
+          <p data-i18n="premiumFeature3Text">Çalışma ilerlemeni daha ayrıntılı görüntüle.</p>
+        </article>
+      </div>
+
+      <p class="notice" data-i18n="premiumNotice">Premium satın alma veya ödeme sistemi bu sürümde etkin değildir.</p>
+    </section>
+
+    <footer>
+      © 2026 ZENTRA Intelligence ·
+      <span data-i18n="footer">Fikirlerini Gerçeğe Dönüştür.</span>
+    </footer>
+  </main>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".menu-link, .premium-card").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      const pageName = this.dataset.page;
+      const target = document.getElementById("page-" + pageName);
+
+      if (!target) {
+        console.error("Sayfa bulunamadı:", pageName);
+        return;
+      }
+
+      document.querySelectorAll(".page").forEach(function (page) {
+        page.classList.remove("active");
+      });
+
+      target.classList.add("active");
+
+      document.querySelectorAll(".menu-link").forEach(function (item) {
+        item.classList.toggle("active", item.dataset.page === pageName);
+      });
+
+      history.replaceState(null, "", "#" + pageName);
+      window.scrollTo(0, 0);
+    });
+  });
+});
+</script>
+<script src="script.js"></script>
+</body>
+</html>
